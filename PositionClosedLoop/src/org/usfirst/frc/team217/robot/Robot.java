@@ -16,8 +16,6 @@
  * Tweak the PID gains accordingly.
  */
 package org.usfirst.frc.team217.robot;
-import org.usfirst.frc.team217.robot.Constants;
-
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.can.*;

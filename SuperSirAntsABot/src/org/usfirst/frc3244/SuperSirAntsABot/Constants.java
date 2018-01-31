@@ -20,20 +20,22 @@ public class Constants {
 	public static final int kTimeoutMs = 10;
 	
 	//PDP Channles
+	
     public static final int DRIVE_BACK_RIGHT_PDP = 0;
 	public static final int DRIVE_FRONT_RIGHT_PDP = 1;
-	public static final int WINCH_PDP = 2;
-	public static final int NC3 = 3;
-	public static final int WRIST_PDP = 4;
-	public static final int KANGAROO_POWER_PDP = 5;
-	public static final int VOLTMETER_PDP = 6;
-	public static final int NC7_PDP = 7;
-	public static final int LIGHTS_SPIKE1_PDP = 8;
-	public static final int LIGHTS_SPIKE2_PDP = 9;
-	public static final int INTAKE_PDP = 10;
-	public static final int FUEL_INDEXER_PDP = 11;
-	public static final int NC12_PDP = 12;
+	//public static final int WINCH_PDP = 2;
+	//public static final int NC3 = 3;
+	//public static final int WRIST_PDP = 4;
+	//public static final int KANGAROO_POWER_PDP = 5;
+	//public static final int VOLTMETER_PDP = 6;
+	//public static final int NC7_PDP = 7;
+	//public static final int LIGHTS_SPIKE1_PDP = 8;
+	//public static final int LIGHTS_SPIKE2_PDP = 9;
+	//public static final int INTAKE_PDP = 10;
+	//public static final int FUEL_INDEXER_PDP = 11;
+	//public static final int NC12_PDP = 12;
 	public static final int DRIVE_FRONT_LEFT_PDP = 13;
-	public static final int FLYWHEEL_PDP = 14;
+	//public static final int FLYWHEEL_PDP = 14;
 	public static final int DRIVE_BACK_LEFT_PDP = 15;
+	
 }

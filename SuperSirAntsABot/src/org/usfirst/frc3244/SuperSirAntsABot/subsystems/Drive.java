@@ -430,7 +430,7 @@ public class Drive extends Subsystem {
 					-m_talons[kBackRight].getClosedLoopError(0));
 
 			SmartDashboard.putNumber("Front Left Current",
-					Robot.pdp.getCurrent(RobotMap.DRIVE_FRONT_LEFT_PDP));
+					Robot.pdp.getCurrent(Constants.DRIVE_FRONT_LEFT_PDP));
 			SmartDashboard.putNumber("Front Right Current",
 					Robot.pdp.getCurrent(Constants.DRIVE_FRONT_RIGHT_PDP));
 			SmartDashboard.putNumber("Back Left Current",
