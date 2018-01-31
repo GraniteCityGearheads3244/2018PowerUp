@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;Constants.java&apos; to &apos;SuperSirAntsABot/src/org.usfirst.frc3244.SuperSirAntsABot&apos;&#x0D;&#x0A;- Original project: &apos;PositionClosedLoop&apos;&#x0D;&#x0A;- Destination element: &apos;SuperSirAntsABot/src/org.usfirst.frc3244.SuperSirAntsABot&apos;&#x0D;&#x0A;- Original element: &apos;org.usfirst.frc.team217.robot.Constants.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=SuperSirAntsABot/src&lt;org.usfirst.frc3244.SuperSirAntsABot" element1="/src&lt;org.usfirst.frc.team217.robot{Constants.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1516773570534" units="1" version="1.0"/>
+</session>

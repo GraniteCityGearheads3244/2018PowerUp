@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;org.usfirst.frc3244.HungryVonHippo.util&apos; to &apos;SuperSirAntsABot/src&apos;&#x0D;&#x0A;- Original project: &apos;HungryVonHippo&apos;&#x0D;&#x0A;- Destination element: &apos;SuperSirAntsABot/src&apos;&#x0D;&#x0A;- Original element: &apos;HungryVonHippo/src/org.usfirst.frc3244.HungryVonHippo.util&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=SuperSirAntsABot/src" element1="/src&lt;org.usfirst.frc3244.HungryVonHippo.util" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1516772922712" version="1.0"/>
+</session>
