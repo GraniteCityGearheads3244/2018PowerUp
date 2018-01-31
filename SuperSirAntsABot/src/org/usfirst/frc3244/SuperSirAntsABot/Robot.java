@@ -82,7 +82,7 @@ public class Robot extends TimedRobot {
      */
     @Override
     public void disabledInit(){
-
+    	winch.my_rope_reset();
     }
 
     @Override
