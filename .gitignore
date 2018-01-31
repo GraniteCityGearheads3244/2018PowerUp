@@ -22,3 +22,10 @@
 hs_err_pid*
 /.metadata/
 /.recommenders/
+
+# Folders to ignore
+SuperSirAntsABot/
+HungryVonHippo/
+MotionMagic/
+PigeonStraight/
+PositionClosedLoop/
