@@ -2,17 +2,25 @@
 <section name="Workbench">
 	<section name="ExternalProjectImportWizard">
 		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
-		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\FRC\3244\2018PowerUp"/>
 			<item value="C:\FRC\3244\2018 PowerUp"/>
 			<item value="C:\Users\Apple\Downloads\Phoenix-Examples-Languages-master\Phoenix-Examples-Languages-master\Java"/>
 			<item value="C:\Users\Apple\Downloads\Phoenix-Examples-Languages-master\Phoenix-Examples-Languages-master\Java\PositionClosedLoop"/>
 			<item value="C:\FRC\3244\2018 PowerUp\2017SteamWorks\HungryVonHippo"/>
-			<item value="C:\FRC\3244\2018PowerUp"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
 			<item value=""/>
 		</list>
+	</section>
+	<section name="WORKBENCH_SETTINGS">
+		<list key="ENABLED_TRANSFERS">
+		</list>
+	</section>
+	<section name="ChooseWorkspaceDialogSettings">
+		<item value="381" key="DIALOG_X_ORIGIN"/>
+		<item value="185" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.RobotDrive"/>
+<fullyQualifiedTypeName name="com.ctre.phoenix.motorcontrol.can.TalonSRX"/>
+<fullyQualifiedTypeName name="com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX"/>
 <fullyQualifiedTypeName name="com.ctre.phoenix.motorcontrol.ControlMode"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.ScissorTest.commands.Scissor_Simple_Setpoint"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.ScissorTest.commands.Scissor_MotionMagic_Command"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.ScissorTest.Robot"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot.Robot"/>
+<fullyQualifiedTypeName name="com.ctre.phoenix.sensors.PigeonIMU"/>
 </qualifiedTypeNameHistroy>

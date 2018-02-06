@@ -179,13 +179,14 @@ public class Scissor extends Subsystem {
     @Override
     public void periodic() {
         // Put code here to be run every loop
-    	m_talons[0].set(ControlMode.Position, m_targetPositionRotations);
-    	m_talons[1].set(ControlMode.Position, m_targetPositionRotations);
+    	m_talons[0].set(ControlMode.MotionMagic, m_targetPositionRotations);
+    	m_talons[1].set(ControlMode.MotionMagic, m_targetPositionRotations);
     }
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
     public void my_scissor_height(double height) {
+    	height = clampInPut(height);
     	m_targetPositionRotations = height * m_encoderUnitsPeruserUnits;
     	//motor_Left_Slave.set(ControlMode.Follower, value);
     	//motor_Right_Master.set(ControlMode.Position, height);

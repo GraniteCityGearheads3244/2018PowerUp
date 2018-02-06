@@ -2,18 +2,27 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="setWheelPIDF" key="selection"/>
+		<item value="kPgain" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="kPgain"/>
+			<item value="winchPigeonIMU1"/>
+			<item value="Robot.scissor.myMotorsMotionMagic(m_setpoint);"/>
+			<item value="isR"/>
+			<item value="is"/>
+			<item value="isL"/>
+			<item value="isF"/>
+			<item value="getlimit"/>
+			<item value="get"/>
+			<item value="get limit"/>
 			<item value="setWheelPIDF"/>
+			<item value="limit switch"/>
+			<item value="limit"/>
+			<item value="light"/>
 			<item value="crawl"/>
-			<item value="driveturbo"/>
-			<item value="PDP"/>
-			<item value="Robot.M_WPI_TalonSRX_config_TimeoutMs"/>
-			<item value="HungryVonHippo"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Constants.kTimeoutMs"/>

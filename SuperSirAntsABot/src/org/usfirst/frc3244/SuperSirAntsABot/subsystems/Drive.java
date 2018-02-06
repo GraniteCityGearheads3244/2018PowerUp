@@ -18,6 +18,7 @@ import org.usfirst.frc3244.SuperSirAntsABot.commands.*;
 import org.usfirst.frc3244.SuperSirAntsABot.util.Utils;
 
 import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+import com.ctre.phoenix.sensors.PigeonIMU;
 import com.ctre.phoenix.motorcontrol.*;
 //import com.ctre.CANTalon;
 //import com.ctre.CANTalon.FeedbackDevice;
@@ -64,8 +65,8 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Drive extends Subsystem {
 	
 	//private boolean MISSING_METHOD;
-	
-    private AHRS headingGyro;// = RobotMap.ahrs;
+	private PigeonIMU headingIMU;
+    //private AHRS headingGyro;// = RobotMap.ahrs;
     private ADXRS450_Gyro headingGyro_BCK;// = RobotMap.adrxs450_Gyro;
     
     private final WPI_TalonSRX front_Left = RobotMap.driveTrainMotor_Left_Front;
@@ -124,10 +125,15 @@ public class Drive extends Subsystem {
  	private boolean m_Craling = false;
 	
   
-
+ 	double [] xyz_dps = new double [3];
+ 	double m_currentAngle;
+	boolean m_angleIsGood;
+	double m_currentAngularRate;
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
 
+ 	
+	
     public Drive() {
     	int talonIndex = 0;
 
@@ -257,17 +263,38 @@ public class Drive extends Subsystem {
 				+ " " + wheelD + " " + wheelF + "\n", false);
 	}
 	
+	@Override
+    public void periodic() {
+		getPigeonIMU();
+	}
+	
+	private void getPigeonIMU() {
+		/* some temps for Pigeon API */
+		PigeonIMU.GeneralStatus genStatus = new PigeonIMU.GeneralStatus();
+		PigeonIMU.FusionStatus fusionStatus = new PigeonIMU.FusionStatus();
+		
+		/* grab some input data from Pigeon and gamepad*/
+		headingIMU.getGeneralStatus(genStatus);
+		headingIMU.getRawGyro(xyz_dps);
+		headingIMU.getFusedHeading(fusionStatus);
+		m_currentAngle = fusionStatus.heading;
+		m_angleIsGood = (headingIMU.getState() == PigeonIMU.PigeonState.Ready) ? true : false;
+		m_currentAngularRate = xyz_dps[2];
+	}
+	
 	public void setgyroOffset(double adjustment){
-		headingGyro.setAngleAdjustment(adjustment);
+		headingIMU.setFusedHeading(adjustment, 10); /* reset heading, angle measurement wraps at plus/minus 23,040 degrees (64 rotations) */
+		//headingGyro.setAngleAdjustment(adjustment);
 		//headingGyro_BCK.setAngledAdjustimenet(adjustment); // Not available
 	}
 	
 	public double getHeading() {
 		double heading;
-		if(headingGyro.isConnected()){
-			heading = headingGyro.getAngle();
+		if(m_angleIsGood) {//headingGyro.isConnected()){
+			heading = headingIMU.getFusedHeading();
+			//heading = headingGyro.getAngle();
 		}else{
-			heading = headingGyro_BCK.getAngle() + headingGyro.getAngleAdjustment();//Try to use the Back up Gyro with the angle Adjustment
+			heading = 0;//headingGyro_BCK.getAngle() + headingGyro.getAngleAdjustment();//Try to use the Back up Gyro with the angle Adjustment
 		}
 		
 		return heading;
@@ -275,7 +302,8 @@ public class Drive extends Subsystem {
 	}
 
 	public void resetHeadingGyro() {
-		headingGyro.reset();
+		headingIMU.setFusedHeading(0.0, 10);
+		//headingGyro.reset();
 		headingGyro_BCK.reset();
 		m_desiredHeading = 0.0;
 	}
@@ -289,16 +317,14 @@ public class Drive extends Subsystem {
 	}
 
 	public void recalibrateHeadingGyro() {
-		headingGyro.reset();
+		headingIMU.setFusedHeading(0.0, 10);
+		//headingGyro.reset();
 		headingGyro_BCK.reset();
 //		headingGyro.free();
 //		headingGyro = new AnalogGyro(RobotMap.HEADING_GYRO);
 //		m_desiredHeading = 0.0;
 	}
 	
-	public double getRobotTilt(){
-		return headingGyro.getRoll();
-	}
 
 	public void setFieldOrientedDrive(boolean enable){
 		
@@ -358,7 +384,7 @@ public class Drive extends Subsystem {
 	}
 	
 	public void set_PreserveHeading(boolean set){
-		if(set && (Math.abs(getRobotTilt())<10)){
+		if(set){
 			m_preserveHeading_Enable = true;
 			m_iterationsSinceRotationCommanded = 0;
 		}else{
@@ -448,15 +474,15 @@ public class Drive extends Subsystem {
 					-m_talons[kBackRight].getMotorOutputVoltage());
 
 			SmartDashboard.putNumber("Gyro",
-					Utils.twoDecimalPlaces(headingGyro.getFusedHeading()));
+					Utils.twoDecimalPlaces(headingIMU.getFusedHeading()));//headingGyro.getFusedHeading()));
 			
-			SmartDashboard.putBoolean(  "IMU_Connected",        headingGyro.isConnected());
-            SmartDashboard.putBoolean(  "IMU_IsCalibrating",    headingGyro.isCalibrating());
-            SmartDashboard.putNumber(   "IMU_Yaw",              headingGyro.getYaw());
+			//SmartDashboard.putBoolean(  "IMU_Connected",        headingGyro.isConnected());
+            //SmartDashboard.putBoolean(  "IMU_IsCalibrating",    headingGyro.isCalibrating());
+            //SmartDashboard.putNumber(   "IMU_Yaw",              headingGyro.getYaw());
             
 			SmartDashboard.putNumber("Desired Heading", m_desiredHeading);
 
-			SmartDashboard.putBoolean("Turbo Mode", Robot.oi.driveTurboMode());
+			//SmartDashboard.putBoolean("Turbo Mode", Robot.oi.driveTurboMode());
 			SmartDashboard.putBoolean("Closed Loop Mode", m_closedLoopMode);
 			SmartDashboard.putBoolean("Field Oriented Drive",
 					m_fieldOrientedDrive);
