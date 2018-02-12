@@ -2,11 +2,23 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="edu.wpi.first.wpilibj.RobotDrive"/>
 <fullyQualifiedTypeName name="com.ctre.phoenix.motorcontrol.can.TalonSRX"/>
-<fullyQualifiedTypeName name="com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX"/>
 <fullyQualifiedTypeName name="com.ctre.phoenix.motorcontrol.ControlMode"/>
 <fullyQualifiedTypeName name="org.usfirst.frc3244.ScissorTest.commands.Scissor_Simple_Setpoint"/>
 <fullyQualifiedTypeName name="org.usfirst.frc3244.ScissorTest.commands.Scissor_MotionMagic_Command"/>
 <fullyQualifiedTypeName name="org.usfirst.frc3244.ScissorTest.Robot"/>
 <fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot.Robot"/>
 <fullyQualifiedTypeName name="com.ctre.phoenix.sensors.PigeonIMU"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot.RobotMap"/>
+<fullyQualifiedTypeName name="java.lang.Math"/>
+<fullyQualifiedTypeName name="com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot2.util.Utils"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.Timer"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot2.Robot"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.DoubleSolenoid.Value"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot2.commands.ScissorToSetpoint"/>
+<fullyQualifiedTypeName name="edu.wpi.first.wpilibj.smartdashboard.SmartDashboard"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot2.commands.Intake_Open"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot2.commands.Intake_Close"/>
+<fullyQualifiedTypeName name="org.usfirst.frc3244.SuperSirAntsABot2.commands.Wrist_Up"/>
+<fullyQualifiedTypeName name="com.ctre.phoenix.ParamEnum"/>
 </qualifiedTypeNameHistroy>

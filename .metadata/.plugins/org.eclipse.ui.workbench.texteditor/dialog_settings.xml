@@ -2,12 +2,14 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="kPgain" key="selection"/>
+		<item value="pdp" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="Reverse"/>
+			<item value="pdp"/>
 			<item value="kPgain"/>
 			<item value="winchPigeonIMU1"/>
 			<item value="Robot.scissor.myMotorsMotionMagic(m_setpoint);"/>
@@ -21,8 +23,6 @@
 			<item value="setWheelPIDF"/>
 			<item value="limit switch"/>
 			<item value="limit"/>
-			<item value="light"/>
-			<item value="crawl"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Constants.kTimeoutMs"/>

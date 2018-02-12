@@ -108,7 +108,7 @@ public class Drive extends Subsystem {
  	// member variables to support closed loop mode
  	private boolean m_closedLoopMode = true;
  	private ControlMode m_closedLoopMode2018;
- 	private double m_maxWheelSpeed = 445; //(10.5 Gear box = 445)//360(12.75 gear box);//550.0;     // empirically measured around 560 to 580	
+ 	private double m_maxWheelSpeed = 417; // // 2016 = 445; //(10.5 Gear box = 445)//360(12.75 gear box);//550.0;     // empirically measured around 560 to 580	
  	private double m_encoderUnitsPerRev = 4096;
  	
  	// Ramp rates in Seconds
@@ -249,7 +249,7 @@ public class Drive extends Subsystem {
 		double wheelP = 0.5;//1.02;//RobotPreferences.getWheelP();
 		double wheelI = 0.0;//RobotPreferences.getWheelI();
 		double wheelD = 0.0;//RobotPreferences.getWheelD();
-		double wheelF = 0.337;// 0.337 for 10.75 gear box 0.416 for 12.7;//RobotPreferences.getWheelF();
+		double wheelF = 0.4158; // 0.337;// 0.337 for 10.75 gear box 0.416 for 12.7;//RobotPreferences.getWheelF();
 
 		// set the PID values for each individual wheel
 		for (talonIndex = 0; talonIndex < kMaxNumberOfMotors; talonIndex++) {

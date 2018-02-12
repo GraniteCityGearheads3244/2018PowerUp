@@ -30,7 +30,7 @@ import com.ctre.phoenix.motorcontrol.StatusFrameEnhanced;
 import com.ctre.phoenix.motorcontrol.can.*;
 
 public class Robot extends IterativeRobot {
-	TalonSRX _talon = new TalonSRX(4);
+	TalonSRX _talon = new TalonSRX(3);
 	Joystick _joy = new Joystick(0);
 	StringBuilder _sb = new StringBuilder();
 
@@ -38,7 +38,7 @@ public class Robot extends IterativeRobot {
 		
 		/* first choose the sensor */
 		_talon.configSelectedFeedbackSensor(FeedbackDevice.CTRE_MagEncoder_Relative, Constants.kPIDLoopIdx, Constants.kTimeoutMs);
-		_talon.setSensorPhase(true);
+		_talon.setSensorPhase(false);
 		_talon.setInverted(true);
 		
 		/* Set relevant frame periods to be at least as fast as periodic rate*/
@@ -53,13 +53,13 @@ public class Robot extends IterativeRobot {
 		
 		/* set closed loop gains in slot0 - see documentation */
 		_talon.selectProfileSlot(Constants.kSlotIdx, Constants.kPIDLoopIdx);
-		_talon.config_kF(0, .312844, Constants.kTimeoutMs);
-		_talon.config_kP(0, 0.682, Constants.kTimeoutMs);
+		_talon.config_kF(0, .314, Constants.kTimeoutMs);
+		_talon.config_kP(0, 0.09, Constants.kTimeoutMs);
 		_talon.config_kI(0, 0, Constants.kTimeoutMs);
 		_talon.config_kD(0, 0, Constants.kTimeoutMs);
 		/* set acceleration and vcruise velocity - see documentation */
-		_talon.configMotionCruiseVelocity(2452, Constants.kTimeoutMs);
-		_talon.configMotionAcceleration(2452, Constants.kTimeoutMs);
+		_talon.configMotionCruiseVelocity(2445, Constants.kTimeoutMs);
+		_talon.configMotionAcceleration(2445, Constants.kTimeoutMs);
 		/* zero the sensor */
 		_talon.setSelectedSensorPosition(0, Constants.kPIDLoopIdx, Constants.kTimeoutMs);
 	}
@@ -81,7 +81,7 @@ public class Robot extends IterativeRobot {
 		if (_joy.getRawButton(1)) {
 			/* Motion Magic */
 			double targetPos = leftYstick
-					* 4096 * 10.0; /* 4096 ticks/rev * 10 Rotations in either direction */
+					* 4096 * 15.0; /* 4096 ticks/rev * 10 Rotations in either direction */
 			_talon.set(ControlMode.MotionMagic, targetPos); 
 
 			/* append more signals to print when in speed mode. */
