@@ -714,8 +714,8 @@ public class Drive extends Subsystem {
 		// delay between commands
 		// set all Talon SRX encoder values to zero
 		for (talonIndex = 0; talonIndex < kMaxNumberOfMotors; talonIndex++) {
-			
-			//m_talons[talonIndex].set(m_closedLoopMode2018, m_wheelSpeeds[talonIndex]);		
+			//m_talons[talonIndex].set(m_wheelSpeeds[talonIndex]);
+			m_talons[talonIndex].set(m_closedLoopMode2018, m_wheelSpeeds[talonIndex]);		
 		}
 
 	}
